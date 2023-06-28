@@ -12,7 +12,8 @@ export default {
         'orange':'#F9A061',
         'red':'#F25F5C',
         'torquise':'#70C1B3',
-        'gray':'#50514F'
+        'gray':'#50514F',
+        'blue': '#247BA0'
       },
       fontFamily:{
         sans: ['Inter', 'sans-serif'],
