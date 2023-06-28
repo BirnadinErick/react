@@ -20,6 +20,12 @@ game that checks the reflex
 6. create result page x
 7. -\('')/-
 
+## known bugs
+
+- in color change, button should say start and then count
+- add loader to indicate next step
+- in color change, button should be clicked another time to trigger the result
+
 ## Lesons learned.
 
 1. place tailwind classes somewhere in the source text, when using dynamic utils: https://youtu.be/aSlK3GhRuXA?t=244
