@@ -11,11 +11,16 @@ import ColorChange from './routes/ColorChange.tsx'
 // main css
 import './index.css'
 import Header from './components/header.tsx'
+import Result from './routes/Result.tsx'
 
 const router = createBrowserRouter([
   {
     path: "/color-change",
     element: <ColorChange />,
+  },
+  {
+    path: "/result",
+    element: <Result />,
   },
 ]);
 

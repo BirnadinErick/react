@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { useNavigate } from "react-router-dom"
 
 // a game-loop
 // has 5 steps
@@ -9,6 +10,8 @@ import { useEffect, useState } from "react"
 //  4. advances to next step if applicable or exits
 
 export default function ColorChange() {
+
+  const navigate = useNavigate();
 
   const [step, setStep] = useState(0);
   const [color, setColor] = useState('transparent');
@@ -53,7 +56,14 @@ export default function ColorChange() {
         setColor('transparent')
       } else{
  //       setResult('round end!');
-          console.info('arithmetic avg is', times.reduce((x:number, y:number)=> x+y) / 5);
+          console.info('avg is', times.reduce((x:number, y:number)=> x+y) / 5);
+          const param = btoa(JSON.stringify({
+            reps: times,
+            challenge: 'color change',
+            threshold: 450
+          }));
+          setTimes([]);
+          navigate(`/result?r=${param}`);
         }
       }}
     >Click Me</button>

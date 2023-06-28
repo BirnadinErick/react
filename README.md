@@ -11,13 +11,14 @@ game that checks the reflex
 ## plan of attack
 
 1. init the repo x
-2. choose tech stack 
+2. choose tech stack x 
 3. do foundational design
 4. create ui 
 5. create the functional requirements:
-    - color change
+    - color change x
     - number recongnization
-6. -\('')/-
+6. create result page x
+7. -\('')/-
 
 ## Lesons learned.
 
