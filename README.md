@@ -19,3 +19,8 @@ game that checks the reflex
     - number recongnization
 6. -\('')/-
 
+## Lesons learned.
+
+1. place tailwind classes somewhere in the source text, when using dynamic utils: https://youtu.be/aSlK3GhRuXA?t=244
+2. states in react, only update in new render: https://react.dev/reference/react/useState#ive-updated-the-state-but-logging-gives-me-the-old-value
+3. setTimeout takes time in milliseconds. 

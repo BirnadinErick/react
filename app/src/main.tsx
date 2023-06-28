@@ -10,6 +10,7 @@ import ColorChange from './routes/ColorChange.tsx'
 
 // main css
 import './index.css'
+import Header from './components/header.tsx'
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,7 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
+    <Header />
     <RouterProvider router={router} />
  </React.StrictMode>,
 )
