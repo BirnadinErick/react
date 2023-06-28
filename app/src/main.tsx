@@ -1,17 +1,14 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom"
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 // routes
-import ColorChange from './routes/ColorChange.tsx'
+import ColorChange from "./routes/ColorChange.tsx";
 
 // main css
-import './index.css'
-import Header from './components/header.tsx'
-import Result from './routes/Result.tsx'
+import "./index.css";
+import Header from "./components/header.tsx";
+import Result from "./routes/Result.tsx";
 
 const router = createBrowserRouter([
   {
@@ -24,9 +21,9 @@ const router = createBrowserRouter([
   },
 ]);
 
-ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
+ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <Header />
     <RouterProvider router={router} />
- </React.StrictMode>,
-)
+  </React.StrictMode>
+);
