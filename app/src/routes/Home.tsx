@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 function SectionTitle({ title }: { title: string }) {
-  return <h3 className="text-white/80 text-xl">{title}</h3>;
+  return <h3 className="text-white font-bold text-xl">{title}</h3>;
 }
 
 function Game({ text }: { text: string }) {
@@ -9,7 +9,7 @@ function Game({ text }: { text: string }) {
   return (
     <Link
       to={text.replaceAll(" ", "-").toLowerCase()}
-      className="block border-4 text-lg p-4 border-white text-white"
+      className="block border-4 text-lg p-4 border-white text-white uppercase hover:text-black hover:bg-white transition-colors duration-300 ease-in-out hover:font-bold"
     >
       {text}
     </Link>
