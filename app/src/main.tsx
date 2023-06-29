@@ -9,6 +9,7 @@ import ColorChange from "./routes/ColorChange.tsx";
 import "./index.css";
 import Header from "./components/header.tsx";
 import Result from "./routes/Result.tsx";
+import ReconNum from "./routes/ReconNum.tsx";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
   {
     path: "/result",
     element: <Result />,
+  },
+  {
+    path: "/recon-num",
+    element: <ReconNum />,
   },
 ]);
 
