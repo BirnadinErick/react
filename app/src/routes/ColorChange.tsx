@@ -16,7 +16,6 @@ export default function ColorChange() {
   const [color, setColor] = useState("transparent");
   const [times, setTimes] = useState<Array<number>>([]);
   const [startTime, setStartTime] = useState(0);
-  //  const [result, setResult] = useState('')
 
   // need to include the usable styles, so that the tailwind
   // will not purge the output CSS. I saw this trick from youtube, btw.
@@ -27,13 +26,11 @@ export default function ColorChange() {
     const timeout = Math.ceil((Math.random() * 10000) % 4);
 
     setTimeout(() => {
-      console.debug("setting another timeout for step:", step);
-      console.debug("timeout:", timeout);
-
       let targetColor = Math.floor((Math.random() * 100) % 5);
       while (color === colors[targetColor]) {
         targetColor = Math.floor((Math.random() * 100) % 5);
       }
+
       setColor(colors[targetColor]);
       setStartTime(Date.now());
     }, timeout * 1000);
@@ -50,16 +47,10 @@ export default function ColorChange() {
         className="bg-white font-bold p-6 text-3xl w-full my-4"
         onClick={() => {
           if (step + 1 < 6) {
-            //      setResult(`you clicked in ${Date.now() - startTime}ms`);
             setTimes([Date.now() - startTime, ...times]);
             setStep(step + 1);
             setColor("transparent");
           } else {
-            //       setResult('round end!');
-            console.info(
-              "avg is",
-              times.reduce((x: number, y: number) => x + y) / 5
-            );
             const param = btoa(
               JSON.stringify({
                 reps: times,
@@ -74,10 +65,6 @@ export default function ColorChange() {
       >
         Click Me
       </button>
-
-      {/*
-    <p className="text-white/80 font-mono uppercase">{result}</p>
-    */}
     </main>
   );
 }
