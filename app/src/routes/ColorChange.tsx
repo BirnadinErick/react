@@ -30,13 +30,12 @@ export default function ColorChange() {
       console.debug("setting another timeout for step:", step);
       console.debug("timeout:", timeout);
 
-      setStartTime(Date.now());
-
-      let tagetColor = Math.floor((Math.random() * 100) % 5);
-      while (color === colors[tagetColor]) {
-        tagetColor = Math.floor((Math.random() * 100) % 5);
+      let targetColor = Math.floor((Math.random() * 100) % 5);
+      while (color === colors[targetColor]) {
+        targetColor = Math.floor((Math.random() * 100) % 5);
       }
-      setColor(colors[tagetColor]);
+      setColor(colors[targetColor]);
+      setStartTime(Date.now());
     }, timeout * 1000);
   }, [step]);
 
