@@ -13,11 +13,16 @@ import FindColor from "./routes/FindColor.tsx";
 // main css
 import "./index.css";
 import Home from "./routes/Home.tsx";
+import NumInOrder from "./routes/NumInOrder.tsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Home />,
+  },
+  {
+    path: "/num-in-order",
+    element: <NumInOrder />,
   },
   {
     path: "/find-color",

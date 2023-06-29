@@ -40,7 +40,7 @@ export default function Result() {
           go to home
         </Link>
         <Link
-          to={`/${params.challenge.replace(" ", "-")}`}
+          to={`/${params.challenge.replaceAll(" ", "-")}`}
           className="bg-white text-black text-center my-2 p-4"
         >
           try again

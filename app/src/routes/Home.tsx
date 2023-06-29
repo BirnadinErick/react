@@ -8,7 +8,7 @@ function Game({ text }: { text: string }) {
   // TODO: add hover animation to indicate interaction
   return (
     <Link
-      to={text.replace(" ", "-").toLowerCase()}
+      to={text.replaceAll(" ", "-").toLowerCase()}
       className="block border-4 text-lg p-4 border-white text-white"
     >
       {text}
@@ -16,7 +16,13 @@ function Game({ text }: { text: string }) {
   );
 }
 export default function Home() {
-  const GAMES = ["Physical Button", "Find Color", "Recon Num", "Color Change"];
+  const GAMES = [
+    "Physical Button",
+    "Find Color",
+    "Recon Num",
+    "Color Change",
+    "Num In Order",
+  ];
 
   // TODO: add stats
 
