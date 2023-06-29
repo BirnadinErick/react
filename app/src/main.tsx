@@ -4,14 +4,14 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 // routes
 import ColorChange from "./routes/ColorChange.tsx";
-
-// main css
-import "./index.css";
 import Header from "./components/header.tsx";
 import Result from "./routes/Result.tsx";
 import ReconNum from "./routes/ReconNum.tsx";
 import PhysicalButton from "./routes/PhysicalButton.tsx";
 import FindColor from "./routes/FindColor.tsx";
+
+// main css
+import "./index.css";
 
 const router = createBrowserRouter([
   {
