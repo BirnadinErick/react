@@ -12,8 +12,13 @@ import FindColor from "./routes/FindColor.tsx";
 
 // main css
 import "./index.css";
+import Home from "./routes/Home.tsx";
 
 const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Home />,
+  },
   {
     path: "/find-color",
     element: <FindColor />,
