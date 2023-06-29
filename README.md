@@ -20,6 +20,10 @@ game that checks the reflex
 6. create result page x
 7. -\('')/-
 
+## todo
+
+- add git hooks to lint and stage after bumping the version
+
 ## known bugs
 
 - in color change, button should say start and then count
