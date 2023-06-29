@@ -11,8 +11,13 @@ import Header from "./components/header.tsx";
 import Result from "./routes/Result.tsx";
 import ReconNum from "./routes/ReconNum.tsx";
 import PhysicalButton from "./routes/PhysicalButton.tsx";
+import FindColor from "./routes/FindColor.tsx";
 
 const router = createBrowserRouter([
+  {
+    path: "/find-color",
+    element: <FindColor />,
+  },
   {
     path: "/physical-button",
     element: <PhysicalButton />,
