@@ -10,8 +10,13 @@ import "./index.css";
 import Header from "./components/header.tsx";
 import Result from "./routes/Result.tsx";
 import ReconNum from "./routes/ReconNum.tsx";
+import PhysicalButton from "./routes/PhysicalButton.tsx";
 
 const router = createBrowserRouter([
+  {
+    path: "/physical-button",
+    element: <PhysicalButton />,
+  },
   {
     path: "/color-change",
     element: <ColorChange />,
