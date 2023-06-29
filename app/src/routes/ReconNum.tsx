@@ -36,7 +36,7 @@ export default function ReconNum() {
   }, [step]);
 
   return (
-    <main className="mx-8 my-4 h-full text-white">
+    <main className="mx-8 my-4 h-full text-white space-y-4">
       <h3 className="text-white font-sans uppercase">
         type the number from your keyboard
       </h3>
