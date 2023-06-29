@@ -19,6 +19,7 @@ better than my rip-off. Give it a try. This is not an affiliation.
 I plan not to replicate the entire game as the original is designed mobile in 
 mind; Thus, I will try to replicate the levels that can be ported to the desktop
 or laptop version. Few of such levels I plan to replicate:
+
     - the color change
     - recognize the number
     - physical button: color change, but for keyboard
