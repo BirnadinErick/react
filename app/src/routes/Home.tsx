@@ -5,7 +5,6 @@ function SectionTitle({ title }: { title: string }) {
 }
 
 function Game({ text }: { text: string }) {
-  // TODO: add hover animation to indicate interaction
   return (
     <Link
       to={text.replaceAll(" ", "-").toLowerCase()}

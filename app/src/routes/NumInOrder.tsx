@@ -71,7 +71,7 @@ export default function NumInOrder() {
   return (
     <main className="mx-8 my-4 h-full space-y-4">
       <h3 className="text-white font-sans uppercase">
-        Click either j or f when background color changes
+        Type the shown digits without any space
       </h3>
       <p className="text-sm text-white/50">Step: {step}/5</p>
       <div className="uppercase text-xl font-bold text-white border border-white p-4">

@@ -12,8 +12,8 @@ game that checks the reflex
 
 1. init the repo x
 2. choose tech stack x 
-3. do foundational design
-4. create ui 
+3. do foundational design x
+4. create ui x
 5. create the functional requirements:
     - color change x
     - number recongnization x
@@ -30,6 +30,7 @@ game that checks the reflex
 - add loader to indicate next step
 - in color change, button should be clicked another time to trigger the result
 - revisit the logic to end the game loop
+- in num in order, first after refresh gets retriggered again
 
 ## Lesons learned.
 
@@ -38,3 +39,4 @@ game that checks the reflex
 3. setTimeout takes time in milliseconds. 
 4. hooks can only be used inside the function body components
 5. in useEffect any state wouldbe captured and might be dirty when run.
+
