@@ -6,6 +6,7 @@ blogathon on June 28, 2023. So, I wanted to post something also. After some
 thought, I decided to clone a game I stumbled upon. The game is simple but
 immersive.
 
+[Final Demo Video](https://youtu.be/Xt-W52iF4o8)
 
 Official Playstore link to the game: 
 [Reaction Training](https://play.google.com/store/apps/details?id=com.nixgames.reaction&hl=en&gl=US&pli=1)
@@ -26,6 +27,10 @@ Here are the summaries:
 3. setTimeout takes time in milliseconds. 
 4. hooks can only be used inside the function body components
 5. in useEffect any state would be captured and might be dirty when run.
+
+Apart from first 2 take-aways, I think rest are infamous for you and assume
+you are familiar with them. I will try to explain the first 2 hereafter, giving
+my absolute best.
 
 #### tailwindcss' tree-shaking
 
@@ -105,7 +110,98 @@ from the official doc delves in deep. From
  can pass in a closure to the *setter* and have the return value be the new state.
  This way the closure will be provided with correct current state always. I 
  stumbled upon this issue when I had to calculate the time taken to react.
+
+When I started the timer in `useEffect` and then calculated the time duration 
+in any dispatch function the `clickTime` state will always have `0` in the next run
+or the previous value in the subsequesnt runs. From the video below, this can 
+be observed:
  
+[Stale State](https://youtu.be/qEebUgm2ByQ)
+
+The problem lies in the line `setResult('... ${clickTime - startTime}')`. Since 
+the previous `setClickTime(...)` didn't trigger any UI render, as `clickTime` is 
+not used anywhere in the visible DOM, the `clickTime` at the time of execution
+following lines hasn't been updated but scheduled to be in next subsequent render.
+Thus when the next LOC calculates the value of `clickTime` stays *stale* as `0`;
+the result being `-1687...`, since the `startTime` was updated by the `useEffect`
+hook.
+
+the solution was to get rid of the `clickTime` state and use short-lived local 
+inline calculation. So, I ended up calculating the time duration for reaction 
+without storing the `clickTime` as 
+
+```typescript
+setResult('...' + (Date.now() - startTime));
+```
+
+I still wonder why I didn't do this in the first place. May the reason might be 
+due to the fact that I was rushing to finish within the time only focusing on 
+the endresult without thinking rationally. This is how bugs get us, devs. Beware!
+
+> Alternatively, you can also use give the *setter* a closure that would return
+> the state value that should be updated to.
+
+```typescript
+setResult(()=> `... ${Date.now() - startTime}`);
+
+// another example with previous state in account
+setTimes(prevTimes => [...prevTimes, Date.now() - startTime]);
+```
+
+---
+
+Alright with the zest out of the way, let's get into the app. It should be 
+obvious not all the games from the original app can be cloned, because they 
+are build with mobiles in mind. I selected a few that is suitable to play with 
+keyboard and mouse. 
+
+> **React**, the game is meant to be played on desktops/laptops, only the 
+> *color change* level is eaasy on mobiles.
+
+## Forgotten Level: How well are your ears and hands interlinked?
+
+Below are the features I wanted to implement and have succeeded. I also wanted 
+to implement a level with hearing measurements. The idea is that after an 
+arbitrary milliseconds, app will raise a *sinosoidal* wave via any audio device.
+Player should hit either `j` or `f` as soon as the sound stops.
+
+Though it sounds amazing but due to *time* I couldn't find how to do it. I 
+however came across this blog post to learn the core, I still couldn't figure 
+out a way to trigger `setStartTime` just after the sound ends to measure the time 
+to act.
+
+> If you know how to call a function just after speakers stop playing a sound 
+> using `AudioContext` and `Web Audio API`, please let me know somehow. A PR to 
+> the project would be much appreciatable as well.
+
+The [blog post to refer](https://marcgg.com/blog/2016/11/01/javascript-audio/).
+
+### how to play a sine wave in browser?
+
+To begin with, we should create an `AudioContext` in local scope. Then, we can 
+connect sound `generators` to it and have the waves sent to the `destinations`.
+
+```typescript
+// the context
+let audioCtx = new AudioContext();
+
+// the generator
+let osc = audioCtx.createOscillator();
+
+osc.type = "sine" // there are sine, square, triangle ...
+
+// the wave
+osc.connect(audioCtx.destination)
+osc.start()
+
+setTimeout(()=> {osc.stop()}, 2003);
+```
+Above javascript code snippet will play a short *sine* wave via connected 
+speakers for 2003ms and end(well it should, depending on your browser support 
+blurs).
+
+> For further information on 
+> [Web Audio API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API)
 
 ## Plan of Attack
 
