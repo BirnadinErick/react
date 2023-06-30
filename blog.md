@@ -91,7 +91,7 @@ time to realize this; But I guess someone already had this issue,
 is very clear and consise, giving the solution. An extract from the above 
 mentioned site:-
 
-![react stale states]("./assests/react-stale-state.png")
+![react stale states](./assests/react-stale-state.png)
 
 Further this 
 [section](https://react.dev/reference/react/useState#ive-updated-the-state-but-logging-gives-me-the-old-value)
@@ -144,7 +144,7 @@ Another point to mintion is that I didn't wireframe at a go, I did it as I
 needed, sort of optimization I equipped; this technique is saw throughout the 
 project. Here are the Wireframes collection:
 
-![wireframes]("./assests/wireframes.png")
+![wireframes](./assests/wireframes.png)
 
 ### 2. UI Design
 
@@ -154,7 +154,7 @@ However, I did first used a custom palette, and developed an MVP; thenafter
 only I gave the finishing touch. The design scrrenshots are attached herewith
 and hyper-lapsed video.
 
-![designs]("./assests/design.png")
+![designs](./assests/design.png)
 
 # TODO: add the hyper-lapsed video of design
 
